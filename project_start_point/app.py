@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from controllers.scores_controller import tasks_blueprint
+from controllers.scores_controller import scores_blueprint
 
 app = Flask(__name__)
 

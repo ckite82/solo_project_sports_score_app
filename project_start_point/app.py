@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 from controllers.game_controller import games_blueprint
 from controllers.league_controller import leagues_blueprint
-from controller.team_controller import teams_blueprint
+from controllers.team_controller import teams_blueprint
 
 app = Flask(__name__)
 

@@ -6,3 +6,6 @@ class Game:
         self.league = league
         self.winner = winner
         self.id = id 
+
+# do I need to create objects for a team3 and team4?
+# given that a game is only played between two teams, I shouldn't

@@ -21,6 +21,7 @@ team_repository.save(team3)
 team4 = Team("West Coast Trojans")
 team_repository.save(team4)
 # above code will create each team and save to the DB
+# unsure if I need to create objects for team3 and team4 in my Game class or not?
 
 team_repository.select_all()
 # above method will display the teams

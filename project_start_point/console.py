@@ -12,13 +12,13 @@ game_repository.delete_all()
 team_repository.delete_all()
 # above methods will empty the DB's before they are populated with below info/methods
 
-team1 = Team("Aberdeen Roughnecks", 8)
+team1 = Team("Aberdeen Roughnecks")
 team_repository.save(team1)
-team2 = Team("Dumfries Hunters", 5)
+team2 = Team("Dumfries Hunters")
 team_repository.save(team2)
-team3 = Team("Clyde Valley Blackhawks", 1)
+team3 = Team("Clyde Valley Blackhawks")
 team_repository.save(team3)
-team4 = Team("West Coast Trojans", 2)
+team4 = Team("West Coast Trojans")
 team_repository.save(team4)
 # above code will create each team and save to the DB
 
@@ -89,5 +89,7 @@ game_repository.save(game22)
 
 game_repository.select_all()
 # above will display the games
+
+
 
 # need to input data for the league to be able to populate it with game_wins

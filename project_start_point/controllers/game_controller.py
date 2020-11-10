@@ -19,4 +19,24 @@ def show(id):
     game = game_repository.select(id)
     teams = game_repository.teams(game)
     return render_template("games/show.html", game = game, teams = teams)
-# not sure i understand this route fully, need to review again.
+
+# CREATE
+# POST '/games'
+# Receive the data from the form to put into the db
+# to access info from a form, you need to add "request" to the import from flask request at top of page
+# you then access the key of each form input from the new.html file and relevant form method
+@games_blueprint.route("/games",  methods=['POST'])
+def create_game():
+    team1 = request.form['team1']
+    team2 = request.form['team2']
+    game_week = request.form['game_week']
+    league = request.form['league']
+    team = request.form['team']
+
+    team = team_repository.select(team_id)
+    game = Game(team1, team2, game_week, league, team)
+    game_repository.save(game)
+    return redirect('/games')
+
+# SHOW (result)
+# GET '/games/<id>' and apply game_winner(id)

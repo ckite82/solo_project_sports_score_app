@@ -5,9 +5,9 @@ import repositories.league_repository as league_repository
 import repositories.game_repository as game_repository
 import repositories.team_repository as team_repository
 
-league_blueprint = Blueprint("league", __name__)
+leagues_blueprint = Blueprint("league", __name__)
 
-@league_blueprint.route("/leagues")
+@leagues_blueprint.route("/leagues")
 def leagues():
     leagues = league_repository.select_all()
     return render_template("leagues/index.html", leagues = leagues)

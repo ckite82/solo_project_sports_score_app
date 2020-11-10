@@ -5,12 +5,16 @@ import repositories.game_repository as game_repository
 
 games_blueprint = Blueprint("games", __name__)
 
-@game_blueprint.route("/games")
+# INDEX
+# GET '/games'
+@games_blueprint.route("/games")
 def games():
     games = game_repository.select_all()
     return render_template("games/index.html", games = games)
 
-@game_blueprint.route("/games/<id>")
+# SHOW
+# GET '/games/<id>'
+@games_blueprint.route("/games/<id>")
 def show(id):
     game = game_repository.select(id)
     teams = game_repository.teams(game)

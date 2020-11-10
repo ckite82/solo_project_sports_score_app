@@ -1,18 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Touchdown Lo-down - Scotland</title>">
-        <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
-  
-
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/tables.css') }}">
+        <!--not sure how many of above static/css files I will be using yet-->
+        <title>Touchdown Lo-down - Scotland</title>
     </head>
-
-
-
-
-    
+    <body>
+        <head>
+            <h1>Touchdown Lo-down - Scotland</h1>
+            <h3>Everything you need to know about Scotlands' American Football league</h3>
+        </head>
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <aside>
+            <section>
+                <nav>
+                    <ul class="aside-menu">
+                        <li>
+                            <a href="/league">League</a>
+                        </li>
+                        <li>
+                            <a href="/teams">Teams</a>
+                        </li>
+                        <li>
+                            <a href="/games">Games</a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+        </aside>
+        <main>
+            {% block content %}
+                
+            {% endblock %}
+        </main>
+    </body>
 </html>

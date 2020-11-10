@@ -2,12 +2,15 @@ from db.run_sql import run_sql
 from models.team import Team
 from models.game import Game
 from models.league import League
+import repositories.team_repository as team_repository
+import repositories.league_repository as league_repository
+import repositories.game_repository as game_repository
 # have imported all classes just in case I need access to them at a later stage
 
 def save(team):
     sql = "INSERT INTO teams(team_name) VALUES ( %s ) RETURNING id;"
     values = [team.team_name]
-    results = run_sql( sql, values )
+    results = run_sql(sql, values)
     team.id = results[0]['id']
     return team
 # above function will save each team that is created in the console.py file - team1, team2, etc.

@@ -58,7 +58,7 @@ def edit_team(id):
 def update_team(id):
     team_name = request.form['team_name']
 
-    team = Team(team_name, id) #, wins
+    team = Team(team_name, id) # wins
     team_repository.update(team)
     return redirect("/teams")
 

@@ -3,18 +3,32 @@
 {% block content %}
 <h1>Games</h1>
 
-<p>2020 Schedule</p>
+<h2>Create your fixture</h2>
 
-{% for game in all_games %}
-<tr>
-    <td>
-        <div class="games">
-            <a href="/games/{{game.id}}">{{game.team1, game.team2, game.game_week, game.league}}</a>
+
+<section id="new-form">
+    <form action="/games" method="POST">
+        <div>
+            <label for="team1">Choose Home Team:</label>
+            <select name="team1_id" id="team1">
+                {% for team in all_teams %}
+                    <option value="{{team.id}}">{{team.team_name}}</option>
+                {% endfor %}
+            </select>
         </div>
-    </td>
-</tr>
+        <div>
+            <label for="team2">Choose Away Team:</label>
+            <select name="team2_id" id="team2">
+                {% for team in all_teams %}
+                    <option value="{{team.id}}">{{team.team_name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <input class="create" type='submit' value="Lets go">
+    </form>
+</section>
 
-    
-{% endfor %}
     
 {% endblock  %}
+
+

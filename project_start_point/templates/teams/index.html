@@ -14,19 +14,22 @@
         <div class="content">
         </div>
         <div class="team_name">
-            <a href="/teams/{{team.id}}">{{team.team_name}}</a>
+            <a href="/teams/{{team.id}}">&#127944;   {{team.team_name}}   &#127944;</a>
         </div>
         <div class="delete-buttons">
             <form class="delete-form" action="/teams/{{team.id}}/delete" method="POST">
                 <button type="submit" class="trash-button"><i class="fa fa-trash-o fa-3x" style="color: brown" aria-hidden="true"></i></button>
             </form>
         </div>
-        <div class="edit-buttons">
-            <form class="edit-form" action="/teams/{{team.id}}/edit" method="POST">
-                <button type="submit" class="edit-button"><i>&#127944;</i></button>
-            </form></button>
     </div>
 {% endfor %}
 
     
 {% endblock  %}
+
+<!-- 
+<div class="edit-buttons">
+    <form class="edit-form" action="/teams/{{team.id}}/edit" method="POST">
+        <button type="submit" class="edit-button"><i>&#127944;</i></button>
+    </form></button>
+-->

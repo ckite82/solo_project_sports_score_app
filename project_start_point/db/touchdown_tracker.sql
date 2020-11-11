@@ -21,12 +21,11 @@ CREATE TABLE leagues (
 
 CREATE TABLE games (
     id SERIAL PRIMARY KEY,
-    team1 VARCHAR(255),
-    team2 VARCHAR(255),
+    team1_id INT REFERENCES teams(id) ON DELETE CASCADE,
+    team2_id INT REFERENCES teams(id) ON DELETE CASCADE,
     game_week VARCHAR(255),
     winner VARCHAR(255),
-    league_id INT REFERENCES leagues(id) ON DELETE CASCADE,
-    team_id INT REFERENCES teams(id) ON DELETE CASCADE
+    league_id INT REFERENCES leagues(id) ON DELETE CASCADE
 );
 -- not sure if I need to reference my winner object, currently represented as 'winner = None' in the Game class
 -- have a look back at the 'on delete cascade' command to remember the reasoning for it

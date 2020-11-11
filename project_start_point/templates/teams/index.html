@@ -1,20 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Leagues</h1>
+<h1>Teams</h1>
 
-<table>
-    <tr>
-        <th>
-            
-        </th>
-        <th>
-            
-        </th>
-        <th>
-            
-        </th>
-    </tr>
-</table>
+{% for team in all_teams %}
+    <div class="team">
+        {{team.team_name}}
+
+
+    </div>
+{% endfor %}
+
     
 {% endblock  %}

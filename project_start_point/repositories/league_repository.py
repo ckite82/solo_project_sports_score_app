@@ -7,7 +7,7 @@ import repositories.team_repository as team_repository
 import repositories.game_repository as game_repository
 # have imported all classes just in case I need access to them at a later stage
 
-def save(team):
+def save(league):
     sql = "INSERT INTO leagues(league_name, team_id) VALUES ( %s, %s ) RETURNING id;"
     values = [league.league_name, league.team.id]
     results = run_sql(sql, values)

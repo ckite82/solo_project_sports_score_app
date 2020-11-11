@@ -10,7 +10,7 @@ teams_blueprint = Blueprint("teams", __name__)
 @teams_blueprint.route("/teams")
 def teams():
     teams = team_repository.select_all()
-    return render_template("teams/index.html", teams = teams)
+    return render_template("teams/index.html", all_teams = teams)
 
 # SHOW
 # GET '/teams/<id>'

@@ -3,18 +3,18 @@
 {% block content %}
 <h1>Games</h1>
 
-<table>
-    <tr>
-        <th>
-            
-        </th>
-        <th>
-            
-        </th>
-        <th>
-            
-        </th>
-    </tr>
-</table>
+<p>2020 Schedule</p>
+
+{% for game in all_games %}
+<tr>
+    <td>
+        <div class="games">
+            <a href="/games/{{game.id}}">{{game.team1, game.team2, game.game_week, game.league}}</a>
+        </div>
+    </td>
+</tr>
+
+    
+{% endfor %}
     
 {% endblock  %}

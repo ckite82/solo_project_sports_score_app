@@ -10,7 +10,7 @@ games_blueprint = Blueprint("games", __name__)
 @games_blueprint.route("/games")
 def games():
     games = game_repository.select_all()
-    return render_template("games/index.html", games = games)
+    return render_template("games/index.html", all_games = games)
 
 # SHOW
 # GET '/games/<id>'
@@ -34,7 +34,8 @@ def create_game():
     team = request.form['team']
 
     team = team_repository.select(team_id)
-    game = Game(team1, team2, game_week, league, team)
+    league = league_repository.select(league_id)
+    game = Game(team1, team2, game_week, league)
     game_repository.save(game)
     return redirect('/games')
 

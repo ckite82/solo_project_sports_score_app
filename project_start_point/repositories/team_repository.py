@@ -22,7 +22,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        team = Team(row['team_name'], row['id'])
+        team = Team(row['team_name'], row['game_wins'], row['id'])
         teams.append(team)
     return teams
 # above will allow all teams to be displayed
@@ -34,7 +34,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        team = Team(result['team_name'], result['id'])
+        team = Team(result['team_name'], result['game_wins'], result['id'])
     return team
 # above will allow any specific team to be displayed based on team_id
 
@@ -44,7 +44,12 @@ def delete_all():
 # above will delete all teams before the DB is populated
 
 def delete(id):
-    sql = "DELETE FROM teams WHERE id = %s;"
+    sql = "DELETE FROM teams WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 # above will delete any specific team based on team_id
+
+def update(team):
+    sql = "UPDATE teams SET (team_name, game_wins) = (%s, %s) WHERE id = %s"
+    values = [team.team_name, team.game_wins, team.id]
+    run_sql(sql, values)

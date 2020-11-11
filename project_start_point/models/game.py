@@ -20,6 +20,7 @@ class Game:
 
     # def game_winner(self):
     #     winner = None
-    #     if team1 == [0] and team2 == [1]:
+    #     if team1 == 0 and team2 == 1:
     #         winner = random.randint(0,1)
     #     return winner
+    

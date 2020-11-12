@@ -51,7 +51,6 @@ def edit_team(id):
     # games = game_repository.select_all()
     return render_template("teams/edit.html", team = team) # games = games
 
-
 # UPDATE
 # PUT '/teams/<id>'
 @teams_blueprint.route("/teams/<id>", methods=["POST"])
@@ -61,7 +60,6 @@ def update_team(id):
     team = Team(team_name, id) # wins
     team_repository.update(team)
     return redirect("/teams")
-
 
 # DELETE 
 # POST '/teams/<id>'

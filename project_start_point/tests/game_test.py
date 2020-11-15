@@ -18,10 +18,10 @@ class TestGame(unittest.TestCase):
     def test_game_has_league(self):
         self.assertEqual("NFC Division 1", self.game.league)
 
-    def test_game_has_winner(self):
-        winner = self.game.game_winner(self.team1, self.team2)
-        self.assertEqual(0, self.game.winner)
+    # def test_game_has_winner(self):
+    #     winner = self.game.game_winner(self.team1, self.team2)
+    #     self.assertEqual(0, self.game.winner)
 
-    def test_game_has_winner(self):
-        winner = self.game.game_winner(self.team1, self.team2)
-        self.assertEqual(1, self.game.winner)
+    # def test_game_has_winner(self):
+    #     winner = self.game.game_winner(self.team1, self.team2)
+    #     self.assertEqual(1, self.game.winner)

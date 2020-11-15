@@ -8,8 +8,8 @@ import repositories.game_repository as game_repository
 # have imported all classes just in case I need access to them at a later stage
 
 def save(team):
-    sql = "INSERT INTO teams(team_name) VALUES ( %s ) RETURNING id;"
-    values = [team.team_name]
+    sql = "INSERT INTO teams(team_name, wins) VALUES ( %s, %s ) RETURNING id;"
+    values = [team.team_name, team.wins]
     results = run_sql(sql, values)
     team.id = results[0]['id']
     return team
@@ -22,34 +22,34 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        team = Team(row['team_name'], row['game_wins'], row['id'])
+        team = Team(row['team_name'], row['wins'], row['id'])
         teams.append(team)
     return teams
 # above will allow all teams to be displayed
 
 def select(id):
     team = None
-    sql = "SELECT * FROM teams WHERE id = %s;"
+    sql = "SELECT * FROM teams WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        team = Team(result['team_name'], result['game_wins'], result['id'])
+        team = Team(result['team_name'], result['wins'], result['id'])
     return team
 # above will allow any specific team to be displayed based on team_id
 
 def delete_all():
-    sql = "DELETE FROM teams;"
+    sql = "DELETE  FROM teams;"
     run_sql(sql)
 # above will delete all teams before the DB is populated
 
 def delete(id):
-    sql = "DELETE FROM teams WHERE id = %s"
+    sql = "DELETE  FROM teams WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 # above will delete any specific team based on team_id
 
 def update(team):
-    sql = "UPDATE teams SET (team_name, game_wins) = (%s, %s) WHERE id = %s"
+    sql = "UPDATE teams SET (team_name, wins) = (%s, %s) WHERE id = %s"
     values = [team.team_name, team.wins, team.id]
     run_sql(sql, values)

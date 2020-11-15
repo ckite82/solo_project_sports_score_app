@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS leagues;
 CREATE TABLE teams (
     id SERIAL PRIMARY KEY,
     team_name VARCHAR(255),
-    game_wins INTEGER
+    wins INTEGER
 );
 -- can't recall if I need to add my empty lists
 

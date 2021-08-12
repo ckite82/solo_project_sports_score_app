@@ -13,15 +13,15 @@ class TestGame(unittest.TestCase):
         self.assertEqual("Team2", self.game.team2)
 
     def test_game_has_game_week(self):
-        self.assertEqual("game week 8", self.game.game_week) 
+        self.assertEqual(8, self.game.game_week) 
 
     def test_game_has_league(self):
         self.assertEqual("NFC Division 1", self.game.league)
 
-    # def test_game_has_winner(self):
-    #     winner = self.game.game_winner(self.team1, self.team2)
-    #     self.assertEqual(0, self.game.winner)
+    def test_game_has_winner(self):
+        winner = self.game.game_winner(self.team1, self.team2)
+        self.assertEqual(0, self.game.winner)
 
-    # def test_game_has_winner(self):
-    #     winner = self.game.game_winner(self.team1, self.team2)
-    #     self.assertEqual(1, self.game.winner)
+    def test_game_has_winner(self):
+        winner = self.game.game_winner(self.team1, self.team2)
+        self.assertEqual(1, self.game.winner)

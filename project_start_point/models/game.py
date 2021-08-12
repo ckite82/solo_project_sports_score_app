@@ -12,6 +12,10 @@ class Game:
         self.id = id 
 
     def game_winner(self):
+        # apply the random.randint method on a range of 0-1 
+        # assign random generated integer to 'winner' variable 
+        # if number is 0, winner = team1 
+        # else number will be 1, and winner = team2
         winner = random.randint(0,1)
         if 0 == winner:
             self.winner = self.team1

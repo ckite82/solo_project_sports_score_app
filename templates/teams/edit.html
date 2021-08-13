@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="/teams/{{team.id}}" method="POST"> 
+    <div>
+        <label for="team_name" style="color: white">Edit team name</label>
+        <input type="text" name="team_name" id="team_name" placeholder="Edit team name" required autofocus>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+    
+{% endblock %}

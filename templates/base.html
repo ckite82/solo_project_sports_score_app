@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/tables.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <!--not sure how many of above static/css files I will be using yet-->
+        <title>Touchdown Lo-down - Scotland</title>
+    </head>
+    <body>
+        <head>
+            <h1>Touchdown Lo-down - Scotland</h1>
+            <h3>Everything you need to know about Scotlands' American Football league</h3>
+        </head>
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="/" style="color: white">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about" style="color: white">About</a>
+                    </li>
+                    <li>
+                        <a href="/contact" style="color: white">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <aside>
+            <section>
+                <nav>
+                    <ul class="aside-menu">
+                        <li>
+                            <a href="/leagues" style="color: white">Leagues</a>
+                        </li>
+                        <li>
+                            <a href="/teams" style="color: white">Teams</a>
+                        </li>
+                        <li>
+                            <a href="/games" style="color: white">Games</a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+        </aside>
+        <main>
+            {% block content %}
+                
+            {% endblock %}
+        </main>
+    </body>
+</html>
